@@ -10,24 +10,136 @@
   </head>
   <body>
     <div class="container">
-      <form action="" name="addBook" method="get">
-        Add book information below. <br />
-        <input type="text" name="title" id="title" />
-        <label for="title">Insert book title</label>
-        <input type="text" name="author" id="author" />
-        <label for="author">Insert author</label>
-        <input type="number" name="pages" id="pages" />
-        <label for="pages">Insert number of pages</label>
-        <input type="checkbox" name="isRead" id="isRead" />
-        <label for="isRead">Did you read it already?</label>
-        <input
-          type="button"
-          value="click"
-          name="submit"
-          id="submit"
-          onclick="validateForm(this.form)"
-        />
-      </form>
+      <div class="form-container">
+        <form action="" name="addBook" method="get">
+          <label for="addBook" id="form-title">Add book information</label>
+          <div class="input-container">
+            <input type="text" name="title" id="title" />
+            <label for="title">Insert book title</label>
+          </div>
+          <div class="input-container">
+            <input type="text" name="author" id="author" />
+            <label for="author">Insert author</label>
+          </div>
+          <div class="input-container">
+            <input type="number" name="pages" id="pages" />
+            <label for="pages">Insert number of pages</label>
+          </div>
+          <div class="input-container">
+            <input type="checkbox" name="isRead" id="isRead" />
+            <label for="isRead">Did you read it already?</label>
+          </div>
+          <input
+            type="button"
+            value="Add book"
+            name="submit"
+            id="submit"
+            onclick="validateForm(this.form)"
+          />
+        </form>
+      </div>
+      <div class="books-container">
+        <h1 id="container-title">My Library</h1>
+        <div class="book">
+          <div class="book-content">
+            <h3 class="title">The Hobbit</h3>
+            <p class="author">JRR Tolkien</p>
+            <p class="pages">12</p>
+            <p class="read-status">Already read</p>
+          </div>
+          <button class="delete-book">Remove book</button>
+        </div>
+        <div class="book">
+          <div class="book-content">
+            <h3 class="title">The Hobbit</h3>
+            <p class="author">JRR Tolkien</p>
+            <p class="pages">12</p>
+            <p class="read-status">Already read</p>
+          </div>
+          <button class="delete-book">Remove book</button>
+        </div>
+        <div class="book">
+          <div class="book-content">
+            <h3 class="title">The Hobbit</h3>
+            <p class="author">JRR Tolkien</p>
+            <p class="pages">12</p>
+            <p class="read-status">Already read</p>
+          </div>
+          <button class="delete-book">Remove book</button>
+        </div>
+        <div class="book">
+          <div class="book-content">
+            <h3 class="title">The Hobbit</h3>
+            <p class="author">JRR Tolkien</p>
+            <p class="pages">12</p>
+            <p class="read-status">Already read</p>
+          </div>
+          <button class="delete-book">Remove book</button>
+        </div>
+        <div class="book">
+          <div class="book-content">
+            <h3 class="title">The Hobbit</h3>
+            <p class="author">JRR Tolkien</p>
+            <p class="pages">12</p>
+            <p class="read-status">Already read</p>
+          </div>
+          <button class="delete-book">Remove book</button>
+        </div>
+        <div class="book">
+          <div class="book-content">
+            <h3 class="title">The Hobbit</h3>
+            <p class="author">JRR Tolkien</p>
+            <p class="pages">12</p>
+            <p class="read-status">Already read</p>
+          </div>
+          <button class="delete-book">Remove book</button>
+        </div>
+        <div class="book">
+          <div class="book-content">
+            <h3 class="title">The Hobbit</h3>
+            <p class="author">JRR Tolkien</p>
+            <p class="pages">12</p>
+            <p class="read-status">Already read</p>
+          </div>
+          <button class="delete-book">Remove book</button>
+        </div>
+        <div class="book">
+          <div class="book-content">
+            <h3 class="title">The Hobbit</h3>
+            <p class="author">JRR Tolkien</p>
+            <p class="pages">12</p>
+            <p class="read-status">Already read</p>
+          </div>
+          <button class="delete-book">Remove book</button>
+        </div>
+        <div class="book">
+          <div class="book-content">
+            <h3 class="title">The Hobbit</h3>
+            <p class="author">JRR Tolkien</p>
+            <p class="pages">12</p>
+            <p class="read-status">Already read</p>
+          </div>
+          <button class="delete-book">Remove book</button>
+        </div>
+        <div class="book">
+          <div class="book-content">
+            <h3 class="title">The Hobbit</h3>
+            <p class="author">JRR Tolkien</p>
+            <p class="pages">12</p>
+            <p class="read-status">Already read</p>
+          </div>
+          <button class="delete-book">Remove book</button>
+        </div>
+        <div class="book">
+          <div class="book-content">
+            <h3 class="title">The Hobbit</h3>
+            <p class="author">JRR Tolkien</p>
+            <p class="pages">12</p>
+            <p class="read-status">Already read</p>
+          </div>
+          <button class="delete-book">Remove book</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -34,6 +34,8 @@ function validateForm(event) {
     isRead = 'no';
   }
   addBookToLibrary(title, author, pages, isRead);
+  document.querySelector('form').reset();
+  // need to refresh book display after display
 }
 // const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 256, 'yes');
 
