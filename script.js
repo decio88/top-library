@@ -21,6 +21,20 @@ function addBookToLibrary(title, author, pages, readStatus) {
 function loopBooks() {
   myLibrary.forEach((book) => console.log(book.info()));
 }
+
+function validateForm(event) {
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const pages = document.querySelector('#pages').value;
+  const checkbox = document.querySelector('#isRead');
+  let isRead;
+  if (checkbox.checked) {
+    isRead = 'yes';
+  } else {
+    isRead = 'no';
+  }
+  addBookToLibrary(title, author, pages, isRead);
+}
 // const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 256, 'yes');
 
 // console.log(theHobbit.info());

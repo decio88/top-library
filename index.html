@@ -8,5 +8,26 @@
     <script src="script.js" defer></script>
     <title>Library</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <form action="" name="addBook" method="get">
+        Add book information below. <br />
+        <input type="text" name="title" id="title" />
+        <label for="title">Insert book title</label>
+        <input type="text" name="author" id="author" />
+        <label for="author">Insert author</label>
+        <input type="number" name="pages" id="pages" />
+        <label for="pages">Insert number of pages</label>
+        <input type="checkbox" name="isRead" id="isRead" />
+        <label for="isRead">Did you read it already?</label>
+        <input
+          type="button"
+          value="click"
+          name="submit"
+          id="submit"
+          onclick="validateForm(this.form)"
+        />
+      </form>
+    </div>
+  </body>
 </html>
