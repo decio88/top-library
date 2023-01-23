@@ -36,6 +36,7 @@ function displayBook(book, id) {
   pages.textContent = book.pages;
   if (book.readStatus === 'yes') {
     readStatus.textContent = 'Already read';
+    gi;
   } else {
     readStatus.textContent = 'Not yet read';
   }
@@ -58,22 +59,12 @@ function deleteBook(id) {
   myLibrary.splice(id, 1);
 }
 
-// function listenDelete() {
-//   document.querySelectorAll('.delete-book').forEach((btn) => {
-//     btn.addEventListener('onclick', deleteBook(btn.getAttribute('data-id')));
-//   });
-// }
-
 function addBookToLibrary(title, author, pages, readStatus) {
   const book = new Book(title, author, pages, readStatus);
   myLibrary.push(book);
   const id = myLibrary.indexOf(book);
   displayBook(book, id);
 }
-
-// function updateBooks() {
-//   myLibrary.forEach((book) => displayBooks(book));
-// }
 
 function validateForm(event) {
   const title = document.querySelector('#title').value;
@@ -88,9 +79,4 @@ function validateForm(event) {
   }
   addBookToLibrary(title, author, pages, isRead);
   document.querySelector('form').reset();
-  // need to refresh book display after display
 }
-
-// const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 256, 'yes');
-
-// console.log(theHobbit.info());
