@@ -14,10 +14,11 @@ function Book(title, author, pages, readStatus) {
 }
 
 // function to add book divs
-function displayBook(book) {
+function displayBook(book, id) {
   const bookContainer = document.querySelector('.books-container');
   const bookCard = document.createElement('div');
   bookCard.classList.add('book');
+  bookCard.setAttribute('data-id', id);
   const bookContent = document.createElement('div');
   bookContent.classList.add('book-content');
   const title = document.createElement('h3');
@@ -39,6 +40,8 @@ function displayBook(book) {
     readStatus.textContent = 'Not yet read';
   }
   deleteBtn.textContent = 'Remove book';
+  deleteBtn.setAttribute('data-id', id);
+  deleteBtn.setAttribute('onclick', 'deleteBook(this.getAttribute("data-id"))');
   bookContent.appendChild(title);
   bookContent.appendChild(author);
   bookContent.appendChild(pages);
@@ -47,10 +50,25 @@ function displayBook(book) {
   bookCard.appendChild(deleteBtn);
   bookContainer.appendChild(bookCard);
 }
+
+function deleteBook(id) {
+  // const bookDivs = document.querySelectorAll('.book');
+  const bookDeleted = document.querySelector(`div[data-id="${id}"]`);
+  bookDeleted.remove();
+  myLibrary.splice(id, 1);
+}
+
+// function listenDelete() {
+//   document.querySelectorAll('.delete-book').forEach((btn) => {
+//     btn.addEventListener('onclick', deleteBook(btn.getAttribute('data-id')));
+//   });
+// }
+
 function addBookToLibrary(title, author, pages, readStatus) {
   const book = new Book(title, author, pages, readStatus);
   myLibrary.push(book);
-  displayBook(book);
+  const id = myLibrary.indexOf(book);
+  displayBook(book, id);
 }
 
 // function updateBooks() {
@@ -72,6 +90,7 @@ function validateForm(event) {
   document.querySelector('form').reset();
   // need to refresh book display after display
 }
+
 // const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 256, 'yes');
 
 // console.log(theHobbit.info());
