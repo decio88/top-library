@@ -27,18 +27,21 @@ function displayBook(book, id) {
   author.classList.add('author');
   const pages = document.createElement('p');
   pages.classList.add('pages');
-  const readStatus = document.createElement('p');
+  const label = document.createElement('label');
+  const readStatus = document.createElement('input');
   readStatus.classList.add('read-status');
+  readStatus.setAttribute('type', 'checkbox');
   const deleteBtn = document.createElement('button');
   deleteBtn.classList.add('delete-book');
   title.textContent = book.title;
   author.textContent = book.author;
   pages.textContent = book.pages;
+  label.textContent = 'Have you read it?';
+
   if (book.readStatus === 'yes') {
-    readStatus.textContent = 'Already read';
-    gi;
+    readStatus.checked = true;
   } else {
-    readStatus.textContent = 'Not yet read';
+    readStatus.checked = false;
   }
   deleteBtn.textContent = 'Remove book';
   deleteBtn.setAttribute('data-id', id);
@@ -46,6 +49,7 @@ function displayBook(book, id) {
   bookContent.appendChild(title);
   bookContent.appendChild(author);
   bookContent.appendChild(pages);
+  bookContent.appendChild(label);
   bookContent.appendChild(readStatus);
   bookCard.appendChild(bookContent);
   bookCard.appendChild(deleteBtn);
@@ -80,3 +84,5 @@ function validateForm(event) {
   addBookToLibrary(title, author, pages, isRead);
   document.querySelector('form').reset();
 }
+
+// update readStatus
