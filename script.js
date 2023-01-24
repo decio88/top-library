@@ -31,6 +31,7 @@ function displayBook(book, id) {
   const readStatus = document.createElement('input');
   readStatus.classList.add('read-status');
   readStatus.setAttribute('type', 'checkbox');
+  readStatus.setAttribute('data-id', id);
   const deleteBtn = document.createElement('button');
   deleteBtn.classList.add('delete-book');
   title.textContent = book.title;
@@ -46,6 +47,10 @@ function displayBook(book, id) {
   deleteBtn.textContent = 'Remove book';
   deleteBtn.setAttribute('data-id', id);
   deleteBtn.setAttribute('onclick', 'deleteBook(this.getAttribute("data-id"))');
+  readStatus.setAttribute(
+    'onchange',
+    'updateReadStatus(this.getAttribute("data-id"))'
+  );
   bookContent.appendChild(title);
   bookContent.appendChild(author);
   bookContent.appendChild(pages);
@@ -86,3 +91,11 @@ function validateForm(event) {
 }
 
 // update readStatus
+function updateReadStatus(id) {
+  const checkbox = document.querySelector(`input[data-id="${id}"]`);
+  if (checkbox.checked) {
+    myLibrary[id].readStatus = 'yes';
+  } else {
+    myLibrary[id].readStatus = 'no';
+  }
+}
