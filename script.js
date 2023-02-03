@@ -1,16 +1,23 @@
 const myLibrary = [];
 
-function Book(title, author, pages, readStatus) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.readStatus = readStatus;
-  this.info = function info() {
+class Book {
+  constructor(title, author, pages, readStatus) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.readStatus = readStatus;
+  }
+
+  get info() {
+    return this.getInfo();
+  }
+
+  getInfo() {
     if (this.readStatus === 'yes') {
       return `${this.title} by ${this.author}, ${this.pages} pages, already read.`;
     }
     return `${this.title} by ${this.author}, ${this.pages} pages, not read yet.`;
-  };
+  }
 }
 
 // function to add book divs
